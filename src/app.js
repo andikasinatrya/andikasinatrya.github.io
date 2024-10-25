@@ -25,38 +25,19 @@ document.addEventListener("alpine:init", () => {
     items: [
       {
         id: 1,
-        name: "Robusta Brzail",
+        name: "Telur Asin Masir",
         img: "1.jpg",
-        price: 20000,
-        description: "Mang Eak",
+        price: 3000,
+        description:
+          "Telur asin ini sungguh lezat dan menggugah selera! Teksturnya yang garing di luar namun lembut di dalam memberikan sensasi yang luar biasa. Rasa asin yang pas membuatnya cocok sebagai pelengkap nasi hangat atau camilan. Sungguh sebuah kelezatan yang tak terlupakan!",
       },
       {
         id: 2,
-        name: "Robusta Latte",
+        name: "Telur Bebek",
         img: "2.jpg",
-        price: 25000,
-        description: "Mang Eak",
-      },
-      {
-        id: 3,
-        name: "Robusta Black",
-        img: "3.jpg",
-        price: 30000,
-        description: "Mang Eak",
-      },
-      {
-        id: 4,
-        name: "Robusta lorem",
-        img: "4.jpg",
-        price: 35000,
-        description: "Mang Eak",
-      },
-      {
-        id: 5,
-        name: "Robusta ipsum",
-        img: "5.jpg",
-        price: 10000,
-        description: "Mang Eak",
+        price: 2500,
+        description:
+          "Kandungan alaminya memberikan rasa autentik yang menakjubkan. Telur bebek mentah ini adalah pilihan sempurna untuk diolah menjadi hidangan lezat atau digunakan sebagai bahan utama dalam berbagai resep kreatif. ",
       },
     ],
   }));
@@ -66,6 +47,7 @@ document.addEventListener("alpine:init", () => {
     total: 0,
     quantity: 0,
     isActiveModal: false,
+    modalData: {},
     add(newItem) {
       // Cek apakah ada barang yang sama di cart
       const cartItem = this.items.find((item) => item.id === newItem.id);
@@ -118,8 +100,74 @@ document.addEventListener("alpine:init", () => {
         this.total -= cartItem.price;
       }
     },
+    // Mebuka Modal Box Pada Product
+    openModal(product) {
+      this.isActiveModal = true;
+      this.modalData = product;
+    },
   });
 });
+
+// Form Validation
+const checkoutButton = document.querySelector(".checkout-button");
+checkoutButton.disabled = true;
+
+const form = document.querySelector("#checkoutForm");
+form.addEventListener("keyup", function () {
+  for (let i = 0; i < form.elements.length; i++) {
+    if (form.elements[i].value.length !== 0) {
+      checkoutButton.classList.remove("disabled");
+      checkoutButton.classList.add("disabled");
+    } else {
+      return false;
+    }
+  }
+  checkoutButton.disabled = false;
+  checkoutButton.classList.remove("disabled");
+});
+
+// Kirim data ketika tombol checkout di klik
+checkoutButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const data = new URLSearchParams(formData);
+  const objData = Object.fromEntries(data);
+  const message = formatMessage(objData);
+  window.open("http://wa.me/6281904333707?text=" + encodeURIComponent(message));
+});
+
+// Format Pesan WA
+const formatMessage = (obj) => {
+  return `Data Customer
+  Nama: ${obj.name}
+  Email: ${obj.email}
+  No HP: ${obj.phone}
+Data Pesanan
+${JSON.parse(obj.items).map(
+  (item) => `${item.name} (${item.quantity} x ${rupiah(item.total)}) \n`
+)}
+TOTAL: ${rupiah(obj.total)}
+TERIMA KASIH.`;
+};
+
+// Email Send Js
+function sendMail() {
+  let share = {
+    nama: document.getElementById("nama").value,
+    email_id: document.getElementById("email_id").value,
+    phone_number: document.getElementById("phone_number").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs.send("service_r0cflxl", "template_n1ic3wg", share).then(
+    function (response) {
+      alert("Email Terkirim!");
+    },
+    function (error) {
+      alert("Gagal mengirim email: " + error);
+    }
+  );
+}
 
 //Konfersi ke Rupiah
 window.rupiah = (number) => {

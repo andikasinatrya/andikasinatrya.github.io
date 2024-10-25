@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Shop Andika</title>
+    <title>Telur Belva Asin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
@@ -15,22 +15,32 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Alpine Js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="src/app.js"></script>
+    <script src="src/app.js" async></script>
+    <!-- Email JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "A_M2-Ov4FKOyQ6R0k",
+            });
+        })();
+    </script>
 </head>
 
 <body>
 
     <header>
 
-        <nav class="navbar" x-data="navbar" x-on:click.outside="closeAll()">
+        <nav class="navbar" x-data="navbar" x-on:click.outside="closeAll()" data-aos="fade-down-right"
+            data-aos-duration="1000">
 
-            <h1 class="navbar-logo">Coffee<span>Andika</span>.</h1>
+            <h1 class="navbar-logo">Telur Belva <span>Asin</span></h1>
 
             <nav class="navbar-nav" :class="{ 'active': isActiveNavbar }">
                 <a href="#home">Home</a>
                 <a href="#about">Tentang Kami</a>
-                <a href="#menu">Menu</a>
-                <a href="#products">Produk</a>
+                <a href="#products">Menu</a>
                 <a href="#timeline">Ulasan</a>
                 <a href="#contact">Kontak</a>
             </nav>
@@ -74,6 +84,9 @@
 
                 <section class="form-container" x-show="$store.cart.items.length">
                     <form action="" id="checkoutForm">
+                        <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+                        <input type="hidden" name="total" x-model="$store.cart.total">
+
                         <h5>Customer Detail</h5>
 
                         <label for="name">
@@ -103,10 +116,10 @@
     <main>
         <section class="hero" id="home" data-aos="fade-down" data-aos-duration="1000">
             <article class="content">
-                <h1>Mari Nikmati Seduhan <span>Coffee</span></h1>
-                <p>Kopi Adalah Minuman Sejuta Umat Yang Dapat Dinikmati Dari Berbagai Kalangan. Kopi Juga Dapat
-                    Menunjang
-                    Efektivitas Dari Kinerja Supaya Tidak Mudah Lelah.</p>
+                <h1>Ayo! Cicipi Kelezatan <span>Telur Asin</span></h1>
+                <p>Siapkan Lidah Anda untuk Petualangan Rasa yang Menggoda dengan Telur Asin Kami yang Kaya Aroma dan
+                    Rasanya yang Membahana, Setiap Gigitan adalah Sebuah Perjalanan Menuju Kelezatan yang Tidak
+                    Terlupakan!</p>
             </article>
         </section>
 
@@ -114,105 +127,75 @@
             <h2 data-aos="fade-down" data-aos-duration="1000"><span>Tentang</span> Kami</h2>
             <article class="row">
                 <aside class="about-img">
-                    <img src="img/tentang-kami.jpg" alt="Tentang Kami" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="img/tentang-kami.png" alt="Tentang Kami" data-aos="fade-right" data-aos-duration="1000">
                 </aside>
                 <article class="content" data-aos="fade-left" data-aos-duration="2000">
-                    <h3>Kenapa Memilih Kopi Kami?</h3>
-                    <p>SETIDAKNYA itulah sepotong percakapan antara Ben dan Brie di film Filosofi Kopi 2 yang sedang
-                        tayang
-                        saat ini. Pertanyaan yang hampir sama sering singgah kepada saya. Orang-orang kerap bertanya
-                        pertanyaan semacam “kenapa harus minum kopi?” padahal rasanya ‘kan pahit dan nggak ada
-                        manis-manisnya. Jika saya bilang saya suka dengan rasa kopi, hal yang sama bisa juga dijawab
-                        saat
-                        ada yang bertanya “kenapa saya suka makan bakso”. Rasa bukan satu-satunya hal yang membuat kopi
-                        istimewa. Kopi itu minuman yang banyak manfaat, makna dan tentunya melibatkan banyak jiwa.</p>
-                    <h5>Kopi Itu Menyehatkan</h5>
+                    <h3>Perjalanan Telur Belva Asin</h3>
+                    <p>Pak Dion telah menjelajahi dunia bisnis telur asin selama lebih dari 12 tahun, dimulai setelah
+                        meraih modal dari pengalamannya di Malaysia. Dibantu oleh keluarga kecilnya, ia mengembangkan
+                        bisnisnya dengan fokus pada kualitas produk dan harga yang bersaing. Menciptakan merek Telur
+                        Belva Asin, terinspirasi dari putri tercintanya, Belva, ia menghadapi tantangan dengan keteguhan
+                        hati dan komitmen untuk memberikan yang terbaik bagi pelanggannya. Memanfaatkan media sosial
+                        sebagai sarana promosi, ia berhasil menjangkau berbagai segmen pasar, dari karyawan pabrik
+                        hingga individu. Keberhasilannya bukan hanya dari segi keuangan, tetapi juga dari kepuasan
+                        pelanggan yang menjadi fokus utamanya. Dengan semangat sebagai kepala keluarga, Pak Dion optimis
+                        bahwa bisnisnya akan terus berkembang pesat dalam lima tahun mendatang.</p>
+                    <h4>Semangat Terbesar Saya Dalam Bekerja dan Berbisnis</h4>
                     <p>
-                        Kalau alasan yang satu ini pasti bukanlah isapan jempol belaka. Sudah banyak penelitian yang
-                        mengatakan bahwa kopi dan kafein yang dikandungnya baik untuk tubuh. Penelitian semacam kopi
-                        mampu
-                        menurunkan resiko alzeimer, kanker otak, meremajakan kulit hingga menambah konsentrasi adalah
-                        sedikit dari banyaknya kebaikan yang diberikan kopi untuk kesehatan manusia. Hal ini membuat
-                        kopi
-                        pastinya lebih unggul dari jenis minuman lainnya. Jadi masih ada alasan untuk tidak menikmati
-                        kopi?
+                        Bagi Pak Dion, keberadaan keluarga adalah sumber motivasi terbesarnya. Sebagai sosok yang
+                        bertanggung jawab sebagai kepala keluarga, setiap langkahnya dalam bisnis telur asin dipenuhi
+                        dengan dedikasi untuk memberikan yang terbaik bagi orang-orang tercintanya. Keberhasilannya
+                        dalam bisnis bukan hanya sekadar pencapaian pribadi, tetapi juga bukti komitmen untuk
+                        menciptakan masa depan yang lebih baik bagi keluarganya. Semangatnya untuk memberikan kualitas
+                        terbaik dalam produknya dan mengejar kesuksesan tidak hanya untuk dirinya sendiri, tetapi juga
+                        untuk kebahagiaan dan kesejahteraan keluarga menjadi pendorong utama di setiap langkahnya.
                     </p>
-                    <h5>Kopi Itu Membahagiakan</h5>
-                    <p>Kalau alasan ini sudah pasti valid. Selain membahagiakan karena kafein mampu meningkatkan
-                        produksi
-                        dopamin yang secara ajaib memberikan efek bahagia bagi para peminumnya. Itu kenapa jika kamu
-                        mengalami hari yang buruk dan lalu memutuskan untuk minum kopi seketika perasaan berubah menjadi
-                        lebih baik atau malah semakin bahagia.</p>
+
+                    <h4>Telur Belva Asin: Lebih dari Sekadar Telur Asin Biasa</h4>
+                    <p>
+                        Telur Belva Asin adalah pilihan utama bagi para pecinta telur asin yang menginginkan kualitas
+                        terbaik dengan harga bersaing. Dibuat dengan teliti dan menggunakan bahan berkualitas tinggi,
+                        setiap butir Telur Belva Asin menghadirkan rasa yang memikat dan tekstur yang lembut. Dengan
+                        harga sekitar Rp. 3.000,00 per butir, produk ini tidak hanya menawarkan nilai yang luar biasa,
+                        tetapi juga komitmen terhadap inovasi, kreativitas, dan pelayanan pelanggan yang luar biasa.
+                        Rasakan perbedaan Telur Belva Asin dan bergabunglah dengan keluarga kami untuk pengalaman telur
+                        asin yang tak terlupakan!
+                    </p>
                 </article>
             </article>
         </section>
 
-        <aside id="menu" class="menu">
-            <h2 data-aos="fade-down" data-aos-duration="1000"><span>Menu</span> Kami</h2>
-            <p data-aos="fade-up" data-aos-duration="1000">Menu Kami Tersedia Berbagai Macam Kopi Seperti Berikut:</p>
-
-            <aside class="row">
-                <aside class="menu-card" data-aos="fade-up-right" data-aos-duration="2000">
-                    <img src="img/menu/1.jpg" alt="Coffe Latte" class="menu-card-img">
-                    <h3 class="menu-card-title">- Coffe Latte</h3>
-                    <p class="menu-card-price">IDR 80K</p>
-                </aside>
-                <aside class="menu-card" data-aos="fade-up-left" data-aos-duration="2000">
-                    <img src="img/menu/coffe capuchino.jpg" alt="Coffe Latte" class="menu-card-img">
-                    <h3 class="menu-card-title">- Coffe Capucino</h3>
-                    <p class="menu-card-price">IDR 50K</p>
-                </aside>
-                <aside class="menu-card" data-aos="fade-up-right" data-aos-duration="2000">
-                    <img src="img/menu/coffe ekspresso.jpg" alt="Coffe Latte" class="menu-card-img">
-                    <h3 class="menu-card-title">- Coffe Ekspresso</h3>
-                    <p class="menu-card-price">IDR 90K</p>
-                </aside>
-                <aside class="menu-card" data-aos="fade-up-left" data-aos-duration="2000">
-                    <img src="img/menu/americano coffe.jpg" alt="Coffe Latte" class="menu-card-img">
-                    <h3 class="menu-card-title">- Coffe Americano</h3>
-                    <p class="menu-card-price">IDR 40K</p>
-                </aside>
-                <aside class="menu-card" data-aos="fade-up-right" data-aos-duration="2000">
-                    <img src="img/menu/black-coffe.jpg" alt="Coffe Latte" class="menu-card-img">
-                    <h3 class="menu-card-title">- Black Coffe</h3>
-                    <p class="menu-card-price">IDR 20K</p>
-                </aside>
-            </aside>
-
-        </aside>
-
         <section class="products" id="products" x-data="products">
-            <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"><span>Produk Unggulan</span>
+            <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"><span>Menu</span>
                 Kami</h2>
-            <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Andika ipsum, dolor sit amet
-                consectetur adipisicing elit. Repudiandae voluptatum iusto maxime id quas
-                voluptates!</p>
+            <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Ini Adalah Produk Berkualitas Yang
+                Kami Dedikasikan Penuh!</p>
 
-            <nav class="row">
-                <template x-for="(item, index) in items" x-key="index">
+            <section class="row">
+                <template x-for="(item, index) in items" :key="index">
                     <article class="product-card">
-                        <nav class="product-icons">
+                        <section class="product-icons">
                             <a href="#" @click.prevent="$store.cart.add(item)">
                                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <use href="img/feather-sprite.svg#shopping-cart" />
                                 </svg>
                             </a>
-                            <a href="#" class="item-detail-button" @click.prevent="$store.cart.isActiveModal = true">
+                            <a href="#" class="item-detail-button" @click.prevent="$store.cart.openModal(item)">
                                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <use href="img/feather-sprite.svg#eye" />
                                 </svg>
                             </a>
 
-                        </nav>
+                        </section>
                         <aside class="product-image">
                             <img :src="`img/products/${item.img}`" :alt="item.name" data-aos="fade-down-right"
                                 data-aos-duration="1000">
                         </aside>
                         <article class="product-content">
                             <h3 x-text="item.name" data-aos="zoom-in-down" data-aos-duration="1000"></h3>
-                            <nav class="product-stars" data-aos="zoom-in-down" data-aos-duration="1000">
+                            <section class="product-stars" data-aos="zoom-in-down" data-aos-duration="1000">
                                 <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <use href="img/feather-sprite.svg#star" />
@@ -233,96 +216,87 @@
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <use href="img/feather-sprite.svg#star" />
                                 </svg>
-                            </nav>
+                            </section>
                             <article class="product-price" data-aos="zoom-in-down" data-aos-duration="1000">
                                 <span x-text="rupiah(item.price)"></span>
                             </article>
                         </article>
                     </article>
                 </template>
-            </nav>
+            </section>
         </section>
 
         <section class="parent-container" id="timeline">
             <h2 data-aos="fade-down" data-aos-duration="1000"><span>Ulasan</span> Kami</h2>
             <article class="timeline">
                 <aside class="container left-container">
-                    <img src="./img/menu/1.jpg">
+                    <img src="./img/products/1.jpg">
                     <article class="text-box" data-aos="zoom-in-left" data-aos-duration="1000">
-                        <h2>Coffe Latte</h2>
-                        <small>Kopi Single Origin yang Memikat Lidah </small>
-                        <p>Saya baru saja mencoba kopi single origin terbaru dan pengalaman saya sangat memuaskan. Kopi
-                            ini
-                            memiliki karakteristik unik dari daerah asalnya, memberikan aroma yang khas dan cita rasa
-                            yang
-                            mendalam. Saya menyukai keaslian rasa kopi ini, yang membuatnya berbeda dari campuran kopi
-                            biasa. Keasaman yang seimbang dan aftertaste yang tahan lama membuatnya menjadi pilihan yang
-                            sangat memikat bagi pecinta kopi sejati.
+                        <h2>Andika</h2>
+                        <small>Nikmatnya Sensasi Keasinan yang Terbaik</small>
+                        <p>Saya baru saja mencoba telur asin premium terbaru dan pengalaman saya sungguh luar biasa.
+                            Telur ini memiliki kualitas unggul dari peternakan terpilih, memberikan rasa yang khas dan
+                            kelembutan yang tiada tanding. Saya sangat terkesan dengan keaslian rasa telur ini, yang
+                            jauh melampaui telur biasa. Tekstur yang lembut dan rasa asin yang seimbang membuatnya
+                            menjadi pilihan utama bagi pecinta kuliner.
                         </p>
                         <span class="left-container-arrow"></span>
                     </article>
                 </aside>
                 <aside class="container right-container">
-                    <img src="./img/menu/americano coffe.jpg">
+                    <img src="./img/products/2.jpg">
                     <article class="text-box" data-aos="zoom-in-right" data-aos-duration="1000">
-                        <h2>Coffe Capuchino</h2>
-                        <small>Kopi Cold Brew yang Menyegarkan </small>
-                        <p>Dalam cuaca panas, saya selalu mencari minuman penyegar, dan kopi cold brew adalah pilihan
-                            yang
-                            sempurna. Kelembutan rasa yang dihasilkan dari proses perendaman dalam waktu yang cukup lama
-                            menciptakan minuman kopi yang lebih ringan namun tetap kaya akan cita rasa. Rasanya yang
-                            halus
-                            dan kadar asam yang rendah membuatnya cocok untuk dinikmati tanpa tambahan gula. Cold brew
-                            menjadi pilihan yang menyegarkan dan ideal untuk mereka yang ingin menikmati kopi dengan
-                            nuansa
-                            baru. </p>
+                        <h2>Humaira</h2>
+                        <small>Menghadirkan Keajaiban Nutrisi dalam Setiap Tetesnya</small>
+                        <p>Saya baru saja menemukan jamu telur mentah yang luar biasa ini dan saya benar-benar
+                            terpesona. Jamu ini dibuat dari telur mentah berkualitas tinggi, yang memberikan keajaiban
+                            nutrisi dalam setiap tetesnya. Saya sangat terkesan dengan keaslian rasa jamu ini, yang jauh
+                            melampaui jamu biasa. Kekuatan alaminya yang murni dan kandungan nutrisi yang terjaga
+                            membuatnya menjadi pilihan utama bagi mereka yang peduli akan kesehatan dan kesejahteraan
+                            mereka. Rasakan energi alami yang mengalir begitu Anda mengonsumsinya, memberikan kesegaran
+                            dan kekuatan untuk menjalani hari dengan penuh vitalitas.</p>
                         <span class="right-container-arrow"></span>
                     </article>
                 </aside>
                 <aside class="container left-container">
-                    <img src="./img/menu/black-coffe.jpg">
+                    <img src="./img/products/1.jpg">
                     <article class="text-box" data-aos="zoom-in-left" data-aos-duration="1000">
-                        <h2>Coffe Ekspresso</h2>
-                        <small>Kopi Instan yang Praktis Tanpa Mengorbankan Rasa </small>
-                        <p>Sebagai pecinta kopi dengan jadwal yang padat, saya sering kali mencari solusi cepat dan
-                            praktis.
-                            Kopi instan kini telah menjadi penyelamat saya. Saya baru saja mencoba merek kopi instan
-                            terkenal, dan saya terkesan dengan rasa yang autentik dan tekstur yang mirip dengan kopi
-                            seduh.
-                            Kelebihan lainnya adalah kemudahan dalam persiapan, menjadikannya pilihan yang ideal untuk
-                            orang-orang yang selalu dalam perjalanan tanpa ingin mengorbankan kenikmatan rasa kopi. </p>
+                        <h2>Jenni</h2>
+                        <small>Sensasi Warna dan Tekstur yang Mempesona</small>
+                        <p>Saya baru saja menikmati telur asin premium terbaru, dan pengalaman saya sungguh menakjubkan.
+                            Telur ini tidak hanya menggoda dengan warnanya yang cerah dan menawan, tetapi juga
+                            menawarkan tekstur yang lembut dan menggugah selera. Setiap gigitannya menghadirkan rasa
+                            yang khas dan keasaman yang seimbang, membuatnya menjadi pilihan tak terbantahkan bagi
+                            pecinta kuliner yang menuntut kualitas tinggi. </p>
                         <span class="left-container-arrow"></span>
                     </article>
                 </aside>
                 <aside class="container right-container">
-                    <img src="./img/menu/coffe capuchino.jpg">
+                    <img src="./img/products/2.jpg">
                     <article class="text-box" data-aos="zoom-in-right" data-aos-duration="1000">
-                        <h2>Coffe Americano</h2>
-                        <small>Kopi Cokelat dengan Nuansa Manis yang Memikat </small>
-                        <p>Saya baru-baru ini mencoba kopi yang terinfus dengan berbagai rasa unik seperti vanila, kayu
-                            manis, dan cokelat. Rasanya yang menggoda membuatnya menjadi variasi menarik dari kopi
-                            tradisional. Setiap tegukan memberikan sentuhan rasa yang berbeda-beda, menciptakan
-                            pengalaman
-                            yang lebih kompleks dan menyenangkan. Ini adalah pilihan yang menarik bagi mereka yang ingin
-                            sedikit variasi dalam rutinitas kopi mereka tanpa harus mencari minuman kopi campuran yang
-                            rumit.
+                        <h2>Bagas</h2>
+                        <small>Keunggulan Protein untuk Membangun Otot</small>
+                        <p>Saya baru saja mencoba telur mentah kaya protein ini dan kesan yang saya dapatkan sungguh
+                            luar biasa. Telur ini merupakan sumber protein berkualitas tinggi yang sangat dibutuhkan
+                            untuk membangun otot. Diperkaya dengan nutrisi alami, telur ini memberikan kontribusi
+                            penting bagi kebutuhan protein tubuh. Kekayaan proteinnya tidak hanya mendukung pembentukan
+                            otot yang optimal, tetapi juga memberikan energi dan keseimbangan nutrisi yang diperlukan.
+                            Ini adalah pilihan sempurna bagi mereka yang mengutamakan kesehatan dan kekuatan tubuh.
                         </p>
                         <span class="right-container-arrow"></span>
                     </article>
                 </aside>
                 <aside class="container left-container">
-                    <img src="./img/menu/coffe ekspresso.jpg">
+                    <img src="./img/products/1.jpg">
                     <article class="text-box" data-aos="zoom-in-left" data-aos-duration="1000">
-                        <h2>Black Coffe</h2>
-                        <small>Kopi dengan Aroma Bunga yang Memanjakan Indera </small>
-                        <p>Pengalaman saya dengan kopi yang memiliki aroma bunga seperti lavender atau jasmine
-                            benar-benar
-                            mengagumkan. Aroma yang lembut dan rasa yang ringan memberikan kesan yang begitu
-                            menyegarkan.
-                            Ini adalah pilihan yang ideal untuk mereka yang menginginkan pengalaman minum kopi yang
-                            lebih
-                            halus dan aromatik. Setiap tegukan membawa nuansa bunga yang memanjakan indera, menciptakan
-                            pengalaman yang hampir seperti perjalanan melalui kebun bunga dalam secangkir kopi.</p>
+                        <h2>Margono</h2>
+                        <small>Kualitas yang Terjaga, Kenikmatan yang Bertahan</small>
+                        <p>Saya baru saja mencoba telur asin tahan lama ini, dan saya sangat terkesan dengan
+                            kemampuannya untuk tetap segar dalam waktu yang lama. Telur ini diracik dengan teliti
+                            menggunakan teknik khusus untuk memastikan kualitasnya terjaga dengan baik. Dengan tekstur
+                            yang lembut dan rasa yang khas, telur ini tidak hanya memuaskan lidah, tetapi juga tetap
+                            enak dinikmati dalam waktu yang lama. Kenikmatan yang bertahan ini membuatnya menjadi
+                            pilihan yang sangat praktis dan menggoda bagi pecinta telur asin.</p>
                         <span class="right-container-arrow"></span>
                     </article>
                 </aside>
@@ -334,25 +308,39 @@
             <p data-aos="fade-down" data-aos-duration="1500">Hubungi Kontak Kami Untuk Mendapatkan Informasi Lebih
                 Lanjut</p>
 
-            <nav class="row">
+            <nav class="row" x-data>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d576.9603795927995!2d110.56971913847987!3d-7.380094949575111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a717560392d19%3A0x92cdb3400fd71397!2sBANGTAGOR!5e0!3m2!1sid!2sid!4v1713596829119!5m2!1sid!2sid"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"
-                    data-aos="fade-right" data-aos-duration="1000"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d553.856293272484!2d110.56932559338668!3d-7.380368869348127!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1714908692956!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <form action="" data-aos="fade-left" data-aos-duration="1000">
                     <nav class="input-group">
-                        <i data-feather="user"></i>
-                        <input type="text" placeholder="Nama">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <use href="img/feather-sprite.svg#user" />
+                        </svg>
+                        <input type="text" placeholder="Nama" id="nama">
                     </nav>
                     <nav class="input-group">
-                        <i data-feather="mail"></i>
-                        <input type="text" placeholder="Email">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <use href="img/feather-sprite.svg#mail" />
+                        </svg>
+                        <input type="text" placeholder="Email" id="email_id">
                     </nav>
                     <nav class="input-group">
-                        <i data-feather="phone"></i>
-                        <input type="text" placeholder="Phone Number">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <use href="img/feather-sprite.svg#phone" />
+                        </svg>
+                        <input type="text" id="phone_number" placeholder="Phone Number">
                     </nav>
-                    <button type="submit" class="btn" data-aos="fade-up" data-aos-duration="1000">Kirim Pesan</button>
+                    <nav class="input-group">
+                        <input type="text" id="message" placeholder="How Can We Help You?">
+                    </nav>
+                    <button type="submit" class="btn" data-aos="fade-up" data-aos-duration="1000"
+                        onclick="sendMail()">Kirim Pesan</button>
+
                 </form>
             </nav>
         </section>
@@ -365,22 +353,38 @@
                         <use href="img/feather-sprite.svg#x" />
                     </svg>
                 </a>
-                <aside class="modal-content">
+                <aside class="modal-content" x-show="$store.cart.modalData">
                     <div>
-                        <img src="./img/menu/1.jpg" alt="gambar kopi">
+                        <img :src="`img/products/${$store.cart.modalData.img}`" :alt="$store.cart.modalData.name"
+                            data-aos="fade-down-right" data-aos-duration="1000">
                         <article class="product-content">
-                            <h3> Americano Coffe</h3>
-                            <p> Enak Dan Mantap</p>
+                            <h3 x-text="$store.cart.modalData.name"></h3>
+                            <p x-text="$store.cart.modalData.description"></p>
                             <article class="product-content">
-                                <h3>Coffee Beans 1</h3>
                                 <nav class="product-stars">
                                     <svg width="24" height="24" fill="currentColor" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <use href="img/feather-sprite.svg#star" />
                                     </svg>
+                                    <svg width="24" height="24" fill="currentColor" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <use href="img/feather-sprite.svg#star" />
+                                    </svg>
+                                    <svg width="24" height="24" fill="currentColor" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <use href="img/feather-sprite.svg#star" />
+                                    </svg>
+                                    <svg width="24" height="24" fill="currentColor" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <use href="img/feather-sprite.svg#star" />
+                                    </svg>
+                                    <svg width="24" height="24" fill="currentColor" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <use href="img/feather-sprite.svg#star" />
+                                    </svg>
                                 </nav>
-                                <article class="product-price" x-text="rupiah(item.price)"></article>
-                                <a href="#" @click.prevent="$store.cart.add(item)">
+                                <article class="product-price" x-text="rupiah($store.cart.modalData.price)"></article>
+                                <a href="#" @click.prevent="$store.cart.add($store.cart.modalData)">
                                     <svg width="24" height="24" fill="currentColor" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <use href="img/feather-sprite.svg#shopping-cart" />
@@ -394,25 +398,35 @@
             </nav>
         </section>
 
+
     </main>
 
     <footer>
         <nav class="sosials">
-            <a href="#"><i data-feather="instagram"></i></a>
-            <a href="#"><i data-feather="facebook"></i></a>
-            <a href="#"><i data-feather="x"></i></a>
+            <a href="https://www.instagram.com/dikabelva?igsh=MXZqZ2d3amhpdzkydg=="><svg width="24" height="24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#instagram" />
+                </svg></a>
+            <a href="https://www.facebook.com/profile.php?id=100013849440971&mibextid=ZbWKwL"><svg width="24"
+                    height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#facebook" />
+                </svg></a>
+            <a href="https://www.facebook.com/profile.php?id=100013849440971&mibextid=ZbWKwL"><svg width="24"
+                    height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <use href="img/feather-sprite.svg#message-square" />
+                </svg></a>
         </nav>
 
         <nav class="links">
-            <a href="#home">Home</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#menu">Menu</a>
-            <a href="#timeline">Ulasan</a>
-            <a href="#contact">Kontak</a>
+            <h2>Alamat</h2>
+            <p>Dusun Noloprayan Rt, 03 Rw, 02 Desa Jatirejo, Kecamatan Suruh, Kabupaten Semarang, Jawa Tengah</p>
+            <p>Beroperasi Dari Jam 07.00AM - 10.00PM</p>
         </nav>
 
         <article class="copyright">
-            <p>Created by <a href="#">Andika</a>. | &copy; 2024.</p>
+            <p>Copyright &copy; 2024. Developed by <a href="#">Andika Sinatrya Diningnada</a>.</p>
         </article>
     </footer>
 
@@ -424,6 +438,7 @@
     <script>
         AOS.init();
     </script>
+
 </body>
 
 </html>
