@@ -1,0 +1,454 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+  .overlay:target {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: auto;
+  }
+
+  .section__card::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background-color: #00abf0;
+    z-index: -1;
+    transition: 0.5s;
+  }
+
+  .section__card:hover::before {
+    width: 400%;
+  }
+
+  header .logo {
+    border-right: 1px solid #fff;
+  }
+
+  .sticky {
+    @apply bg-neutral-900 shadow-md;
+  }
+
+  .blob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    background-image: linear-gradient(#1100ff 10%, #ff00f2);
+    filter: blur(250px);
+    transition: all 450ms ease-out;
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform: translate(calc(-50% + 15px), -50%);
+    z-index: -1;
+  }
+
+  .text-content {
+    color: #fff;
+    width: 100% !important;
+    height: auto;
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+    width: 25%;
+    height: auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+  }
+
+  .text-content span {
+    font-family: "DM Sans", serif !important;
+    font-optical-sizing: auto !important;
+  }
+
+  .text-content h1 {
+    font-family: "Teko", serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 700 !important;
+    font-size: 5rem !important;
+  }
+
+  .text-content p {
+    font-family: "DM Sans", serif !important;
+    font-optical-sizing: auto !important;
+    width: 20rem !important;
+  }
+
+  #Portfolio .custom-button {
+    position: absolute !important;
+    top: 25rem !important;
+    left: 5rem !important;
+    width: 10rem !important;
+    height: 3rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.875rem !important;
+    text-transform: capitalize !important;
+    color: white !important;
+    border: 2px solid white !important;
+    background: transparent !important;
+    transition: background-color 0.3s !important, color 0.3s !important;
+    cursor: pointer !important;
+  }
+
+  #Portfolio .custom-button:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .content-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content h1 {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .content p {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .buttons a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 2rem;
+    margin: 0px 6px;
+    border-radius: 25px;
+  }
+
+  .pride {
+    width: clamp(950px, 50%, 400px);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .loli {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+
+  .loli img {
+    display: block;
+    width: 73%;
+  }
+
+  .boyah {
+    width: clamp(550px, 50%, 400px);
+    height: clamp(600px, 50%, 400px);
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .paradox {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .paradox img {
+    display: flex;
+    margin-left: 7rem;
+    width: 10rem;
+  }
+
+  .sacrifice-parent-contact {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: black;
+    height: 3rem;
+    border-radius: 20%;
+    margin-right: 0.75rem;
+  }
+
+  .sacrifice-parent-contact:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .sacrifice-parent-contact:hover span {
+    background-color: white;
+    color: black;
+  }
+
+  .parent-contact:hover span {
+    background-color: white;
+    color: black;
+  }
+  #menu {
+    display: none;
+  }
+
+  /* Media Query untuk iPhone XR (Portrait Mode) */
+  @media (max-width: 828px) and (max-height: 1792px) {
+    #menu {
+      display: inline-block;
+    }
+
+    .header .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: #fff;
+      width: 18rem;
+      height: 30rem;
+      transition: 0.5s;
+    }
+
+    .header .navbar-nav.active {
+      right: 0;
+    }
+
+    .header .navbar-nav a {
+      color: black !important;
+      display: block !important;
+      margin: 1.5rem !important;
+      padding: 0.5rem !important;
+      font-size: 2rem !important;
+    }
+
+    #home {
+      height: 125vh !important;
+    }
+    #home .alter {
+      top: 10rem !important;
+      margin-right: 0 !important;
+      left: 2rem !important;
+      width: 2rem !important;
+    }
+
+    .text-content {
+      top: 3rem;
+      left: 2rem;
+      width: 50%;
+      font-size: 10px;
+    }
+
+    #Portfolio .custom-button {
+      top: 12rem !important;
+      left: 2rem !important;
+      font-size: 10px !important;
+      width: 10rem !important;
+      height: 2rem !important;
+    }
+
+    .text-content h1 {
+      font-size: 3rem !important;
+    }
+
+    .text-content p {
+      width: 15rem !important;
+    }
+
+    .description2 {
+      grid-template-columns: 1fr;
+    }
+
+    .description2 .left {
+      order: 2;
+    }
+
+    .description2 .imager {
+      order: 1;
+      margin-bottom: 20px;
+    }
+    .skill_wrapper {
+      gap: 3rem !important;
+    }
+    .container {
+      padding: 0 1rem;
+      margin-top: -8rem !important;
+    }
+    #skill {
+      padding-top: 1rem;
+      height: auto;
+    }
+
+    .swiper-slide img {
+      width: 40%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .text-center {
+      font-size: 2rem;
+    }
+
+    .font-bold {
+      font-size: 2rem;
+    }
+
+    .swiper-pagination {
+      bottom: 10px;
+    }
+    .section__container {
+      padding-top: 5rem;
+      height: auto;
+    }
+
+    .swiper.uniqueSwiper.boyah {
+      width: 90%;
+      padding: 0 10px;
+    }
+
+    .swiper-slide.paradox {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .swiper-slide.paradox h4 {
+      font-size: 1.5rem;
+    }
+
+    .swiper-slide.paradox p {
+      font-size: 1rem;
+    }
+
+    .swiper-slide.paradox h5,
+    .swiper-slide.paradox h6 {
+      font-size: 1rem;
+    }
+
+    .swiper-slide.paradox img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .newsletter {
+      margin-top: -5rem;
+      flex-direction: column;
+      padding: 0;
+      gap: 0;
+      text-align: center;
+      align-items: center;
+    }
+
+    .news-text {
+      margin-left: 15rem;
+      text-align: center;
+      margin-top: 50rem;
+    }
+
+    .news-text h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .news-text h2 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-top: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .star_container {
+      width: 90%;
+      height: auto;
+    }
+
+    .newsletter form {
+      width: 80%;
+      padding: 1rem;
+    }
+
+    .newsletter input,
+    .newsletter textarea,
+    .newsletter button {
+      font-size: 1rem;
+      padding: 0.75rem;
+      width: 100%;
+    }
+
+    .footer {
+      margin-top: 2rem !important;
+      padding-top: 35rem !important;
+    }
+
+    .footer .top {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 1.5rem !important;
+    }
+
+    .footer .parent-contact {
+      width: 100% !important;
+      text-align: center !important;
+      padding: 0.5rem !important;
+      margin-top: 2rem !important;
+    }
+
+    .footer .footer_low h1 {
+      font-size: 1.25rem !important;
+    }
+
+    .footer .footer_low p {
+      font-size: 0.9rem !important;
+    }
+
+    .footer .bottom {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 1rem !important;
+    }
+
+    .footer .line {
+      margin-top: 1rem !important;
+    }
+  }
+}

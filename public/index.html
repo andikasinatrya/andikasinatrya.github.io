@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Tailwindcss -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../src/css/input.css">
+    <!-- BoxIcon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Swipper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="m-0 p-0 box-border bg-black">
+
+    <!-- Navigasi -->
+    <header class="fixed mx-0 my-0 justify-between items-center z-[1000] w-full">
+        <section
+            class="header my-0 mx-0 flex justify-between items-center transition-all duration-300 ease-in-out w-full">
+            <nav class="flex space-x-5 justify-end">
+                <div class="logo flex border-r border-white leading-5">
+                    <img src="../asset/logo.png" alt="logo" class="w-[4rem] mt-[-1rem]">
+                    <span href="#"
+                        class="px-5 mt-2 ml-[-10px] text-[25px] font-bold no-underline text-sky-500 pl-5">Andika
+                        <br>
+                        <span class="text-sm text-white">Fullstack Developer</span>
+                    </span>
+                </div>
+                <nav class="navbar-nav py-3 px-5 mt-2">
+                    <a href="#home" class="text-[18px] font-medium no-underline text-sky-500 py-3 px-5 mt-2">Home</a>
+                    <a href="#about"
+                        class="text-[18px] font-medium text-white no-underline hover:text-[#00abf0] py-3 px-1 mt-2">About</a>
+                    <a href="#Service"
+                        class="text-[18px] font-medium text-white no-underline hover:text-[#00abf0] py-3 px-5 mt-2">Service</a>
+                    <a href="#Portfolio"
+                        class="text-[18px] font-medium text-white no-underline hover:text-[#00abf0] py-3 px-4 mt-2">Portfolio</a>
+                    <a href="#Contact"
+                        class=" text-[18px] font-medium text-white no-underline hover:text-[#00abf0] py-3 px-5 mt-2">Contact</a>
+                </nav>
+            </nav>
+
+            <!-- Menu Sosial Media -->
+            <nav class="my-[1px] mr-5">
+                <a href="https://web.facebook.com/?locale=id_ID&_rdc=1&_rdr"
+                    class="inline-flex justify-center items-center w-10 h-10 bg-transparent border-2 border-white rounded-full text-[#00abf0] text-[20px] no-underline transition duration-500 hover:bg-[#00abf0] hover:text-white hover:shadow-[0_0_10px_#00abf0] ml-3">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://www.instagram.com/accounts/login/"
+                    class="inline-flex justify-center items-center w-10 h-10 bg-transparent border-2 border-white rounded-full text-[#00abf0] text-[20px] no-underline transition duration-500 hover:bg-[#00abf0] hover:text-white hover:shadow-[0_0_10px_#00abf0] ml-3">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+                <a href="https://github.com/"
+                    class="inline-flex justify-center items-center w-10 h-10 bg-transparent border-2 border-white rounded-full text-[#00abf0] text-[20px] no-underline transition duration-500 hover:bg-[#00abf0] hover:text-white hover:shadow-[0_0_10px_#00abf0] ml-3">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://id.linkedin.com/"
+                    class="inline-flex justify-center items-center w-10 h-10 bg-transparent border-2 border-white rounded-full text-[#00abf0] text-[20px] no-underline transition duration-500 hover:bg-[#00abf0] hover:text-white hover:shadow-[0_0_10px_#00abf0] ml-3">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+            </nav>
+            <button id="menu"
+                class="hamburger_menu text-3xl font-medium text-white no-underline hover:text-[#00abf0] py-3 px-1 mt-2">
+                <i class='bx bx-menu'></i>
+            </button>
+        </section>
+    </header>
+
+
+
+    <!-- Home -->
+    <section id="home" class="h-screen flex justify-between items-center px-[11%] relative">
+        <video autoplay loop muted class="w-full h-full object-cover" preload="auto" style="z-index: 0;">
+            <source src="../asset/backround.mp4" type="video/mp4">
+        </video>
+
+        <span class="alter absolute left-[21rem] text-white" style="top: 13rem; z-index: 20; font-size: 2rem;">
+            アンディカ シナトリヤ
+        </span>
+        <h2 class="absolute inset-0 bg-black text-white flex flex-col items-center justify-center text-[14vw] font-extrabold text-center uppercase mix-blend-multiply"
+            style="z-index: 1;">
+            Andika
+        </h2>
+
+        <div id="particles-js"
+            style="z-index: 1; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; width: 100%;">
+        </div>
+    </section>
+
+    <div class="blob"></div>
+
+    <!-- About Me -->
+    <div id="about"
+        class="description2 grid grid-cols-1 my-40 items-center lg:grid-cols-2 justify-evenly gap-10 px-[5%] mt-5 pt-20 mouse-cursor-gradient-tracking">
+        <div class="left col-span-1 text-white">
+            <h2 class="font-bold text-4xl leading-[52px] lg:text-[42px]">Everything You Need to About Me.</h2>
+            <p class="font-normal my-8 text-xl">I Am A Vocational School Student Who Is Truly Captivated By The World
+                Of Programming. Since My Middle School Days, I Have Delved Into Coding And Explored Various Programming
+                Languages Such As HTML, CSS, And JavaScript. My Passion For Technology Drives Me To Continuously Enhance
+                My Skills In Software Development And Create Projects That Are Not Only Engaging But Also Beneficial To
+                Others.</p>
+            <a href="../asset/My_CV.png" download
+                class="inline-block py-3 px-9 bg-[#00abf0] rounded-full text-white text-xl font-semibold tracking-wider shadow-[0_0_10px_#00abf0] transition duration-500 hover:shadow-none">
+                Download CV
+            </a>
+
+        </div>
+        <div
+            class="right col-span-1 justify-self-center flex justify-center items-center w-[500px] h-[500px] bg-[#000000] rounded-full border-[25px] border-white mb-10">
+            <img src="../asset/About.png" alt="About me illustration"
+                class="relative max-w-[450px] rounded-full overflow-hidden">
+        </div>
+    </div>
+
+    <!--Service And Skils -->
+    <div id="Service" class=" pt-20 w-full h-auto text-wrap mt-0">
+        <div class="grid grid-cols-1 justify-items-center h-auto">
+            <h1 class="font-bold text-slate-50 text-3xl">Exceptional Service</h1>
+        </div>
+        <div class="skill_wrapper grid grid-cols-1 my-8 items-center lg:grid-cols-2 justify-evenly  px-[5%] mt-0 pt-20 w-full"
+            style="gap: 13rem; border-bottom: 1px solid white;">
+            <div class="skill_item col-span-1 text-white ">
+                <h2 class="font-bold text-4xl leading-[52px] lg:text-[42px]">Front-End Development </h2>
+                <p class="skill_desc font-normal my-8 text-base break-words">
+                    As A Front-End Developer, I Bring Web Designs To Life, Ensuring Seamless User Experiences Through
+                    Clean And Responsive Interfaces. </p>
+            </div>
+            <div class="skills-list text-white" style="line-height: 2;">
+                <span class="block mb-2 font-bold text-2xl mt-1">ABILITIES</span>
+                <div class="grid grid-cols-2 gap-x-8">
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span>o Alpine.js</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o JavaScript</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o Bootstrap</span>
+                        </li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span>o CSS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o HTML</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o Tailwind CSS</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="skill_wrapper grid grid-cols-1 my-8 items-center lg:grid-cols-2 justify-evenly  px-[5%] mt-0 pt-10 w-full"
+            style="gap: 13rem; border-bottom: 1px solid white;">
+            <div class="skill_item col-span-1 text-white ">
+                <h2 class="font-bold text-4xl leading-[52px] lg:text-[42px]">Back-End Development</h2>
+                <p class="skill_desc font-normal my-8 text-base break-words">
+                    In Back-End Development, I Architect Robust And Scalable Solutions, Handling Server-Side Logic To
+                    Empower Dynamic And Efficient Digital Experiences. </p>
+            </div>
+            <div class="skills-list text-white" style="line-height: 2;">
+                <span class="block mb-2 font-bold text-2xl mt-1">ABILITIES</span>
+                <div class="grid grid-cols-2 gap-x-8">
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span>o PHP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o MySQL</span>
+                        </li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span>o Laravel</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o Express.js</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="skill_wrapper grid grid-cols-1 items-center lg:grid-cols-2 justify-evenly  px-[5%] pt-10 w-full"
+            style="gap: 13rem; border-bottom: 1px solid white;">
+            <div class="skill_item col-span-1 text-white ">
+                <h2 class="font-bold text-4xl leading-[52px] lg:text-[42px]">Digital Design </h2>
+                <p class="skill_desc font-normal my-8 text-base break-words">
+                    My Expertise In Digital Design Transforms Concepts Into Visually Captivating Experiences, Blending
+                    Creativity And Functionality For Impactful User Interfaces.
+                </p>
+            </div>
+            <div class="skills-list text-white" style="line-height: 2;">
+                <span class="block mb-2 font-bold text-2xl mt-1">ABILITIES</span>
+                <div class="grid grid-cols-2 gap-x-8">
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span>o Brand Identity </span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o Logo Design </span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o UI/UX Design </span>
+                        </li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <span>o Canva</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o Photoshop </span>
+                        </li>
+                        <li class="flex items-center">
+                            <span>o Adobe Illustrator </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Skils -->
+    <section id="skill" class="mt-[5rem] w-full h-[50rem]" style="padding-top: 10rem;">
+        <div class="container h-[100vh] flex justify-center items-center mt-[-4rem]">
+            <div class="w-[62rem] h-[30rem]">
+                <h1 class="font-bold text-slate-50 text-3xl text-center">Certificate of Competence</h1>
+                <div class="swiper mySwiper pride">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide loli">
+                            <a data-fslightbox="gallery" href="../asset/img1.png" class="block">
+                                <img src="../asset/img1.png" alt="Haskell"
+                                    class="mx-auto mb-2 filter grayscale hover:filter-none">
+                            </a>
+                        </div>
+                        <div class="swiper-slide loli">
+                            <a data-fslightbox="gallery" href="../asset/img2.png" class="block">
+                                <img src="../asset/img2.png" alt="Front-End"
+                                    class="mx-auto mb-2 filter grayscale hover:filter-none">
+                            </a>
+                        </div>
+                        <div class="swiper-slide loli">
+                            <a data-fslightbox="gallery" href="../asset/img3.png" class="block">
+                                <img src="../asset/img3.png" alt="OOP"
+                                    class="mx-auto mb-2 filter grayscale hover:filter-none">
+                            </a>
+                        </div>
+                        <div class="swiper-slide loli">
+                            <a data-fslightbox="gallery" href="../asset/img4.png" class="block">
+                                <img src="../asset/img4.png" alt="Software Development"
+                                    class="mx-auto mb-2 filter grayscale hover:filter-none">
+                            </a>
+                        </div>
+                        <div class="swiper-slide loli">
+                            <a data-fslightbox="gallery" href="../asset/img5.png" class="block">
+                                <img src="../asset/img5.png" alt="JavaScript"
+                                    class="mx-auto mb-2 filter grayscale hover:filter-none">
+                            </a>
+                        </div>
+                        <div class="swiper-slide loli">
+                            <a data-fslightbox="gallery" href="../asset/img6.png" class="block">
+                                <img src="../asset/img6.png" alt="Programming"
+                                    class="mx-auto mb-2 filter grayscale hover:filter-none">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Navigasi Swiper -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <div id="Portfolio" class="mt-[-0rem] pt-20 w-full h-full">
+        <div class="grid grid-cols-1 justify-items-center h-auto">
+            <h1 class="font-bold text-slate-50 text-3xl">My Portfolio</h1>
+        </div>
+        <div class="flex min-h-screen w-full items-center justify-center">
+            <div class="grid grid-cols-1 gap-5 px-10 mt-3">
+                <div class="relative items-center justify-center overflow-hidden">
+                    <div class="h-30 w-30">
+                        <img class="h-full w-full object-cover" src="../asset/1.svg" alt="" />
+                    </div>
+                    <div class="text-content">
+                        <span>Full Stack Developer</span>
+                        <h1>COFFE SHOP</h1>
+                        <p>I Have Created A Website For A Coffee Shop
+                            That Showcases The Menu And The Warm
+                            Atmosphere Of The Place</p>
+                    </div>
+                    <a href="https://andikasinatrya.github.io/coffee_shop/" target="_blank" class="custom-button">
+                        VIEW WEBSITE
+                    </a>
+
+                </div>
+                <div class="relative items-center justify-center overflow-hidden">
+                    <div class="h-30 w-30">
+                        <img class="h-full w-full object-cover" src="../asset/2.svg" alt="" />
+                    </div>
+                    <div class="text-content">
+                        <span>Full Stack Developer</span>
+                        <h1>BOOKSHELF</h1>
+                        <p>I Have Created A Website With A
+                            Digital Bookshelf Feature, Where Visitors
+                            Can Discover And Read Their Favorite Books
+                        </p>
+                    </div>
+                    <a href="https://andikasinatrya.github.io/bookshelf/" target="_blank" class="custom-button">
+                        VIEW WEBSITE
+                    </a>
+                </div>
+                <div class="relative items-center justify-center overflow-hidden">
+                    <div class="h-30 w-30">
+                        <img class="h-full w-full object-cover" src="../asset/3.svg" alt="" />
+                    </div>
+                    <div class="text-content">
+                        <span>Full Stack Developer</span>
+                        <h1>REGISTRATION</h1>
+                        <p>I Have Created A Website That Features A
+                            Registration Form To Make It Easy For Visitors
+                            To Sign Up Quickly
+                        </p>
+                    </div>
+                    <a href="https://github.com/andikasinatrya/Form_PHP" target="_blank" class="custom-button">
+                        VIEW WEBSITE
+                    </a>
+                </div>
+                <div class="relative items-center justify-center overflow-hidden">
+                    <div class="h-30 w-30">
+                        <img class="h-full w-full object-cover" src="../asset/4.svg" alt="" />
+                    </div>
+                    <div class="text-content">
+                        <span>Full Stack Developer</span>
+                        <h1>SCHEDULE</h1>
+                        <p>I Have Created A Website That Includes An Activity Schedule To Help Visitors See The Upcoming
+                            Events.
+                        </p>
+                    </div>
+                    <a href="https://andikasinatrya.github.io/SCHEDULE/" target="_blank" class="custom-button">
+                        VIEW WEBSITE
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- My Experience -->
+    <div class="w-full min-h-screen mt-[0rem] pt-20 flex justify-center items-center">
+        <div class="w-full p-[35px_10%]">
+            <main class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+
+                <!-- Education Section Starts -->
+                <section class="col">
+                    <header class="font-sans text-[#00abf0] pl-8 pb-5">
+                        <h2 class="text-xl md:text-2xl">EDUCATION</h2>
+                    </header>
+
+                    <div class="pl-8 border-l-2 border-gray-400">
+                        <div
+                            class="relative p-5 border border-gray-300 bg-white cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-transparent mb-5">
+                            <span
+                                class="absolute w-5 h-5 rounded-full bg-[#00abf0] border-2 border-white right-full mr-[25px] top-0"></span>
+                            <h4 class="relative text-[#00abf0] mb-2">2015 - 2018</h4>
+                            <h3 class="font-sans text-lg text-[#444] mb-2">Starting My Career At SMP 1 Suruh</h3>
+                            <p class="text-gray-600 leading-5">I Began My Career At SMP 1 Suruh, Gaining Foundational
+                                Skills And Valuable Experience In The Education Field.</p>
+                        </div>
+
+                        <div
+                            class="relative p-5 border border-gray-300 bg-white cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-transparent mb-5">
+                            <span
+                                class="absolute w-5 h-5 rounded-full bg-[#00abf0] border-2 border-white right-full mr-[25px] top-0"></span>
+                            <h4 class="relative text-[#00abf0] mb-2">2018 - 2021</h4>
+                            <h3 class="font-sans text-lg text-[#444] mb-2">Continuing At SMKN 1 Tengaran</h3>
+                            <p class="text-gray-600 leading-5">Moving To SMKN 1 Tengaran, I Faced New Challenges That
+                                Helped Me Deepen My Knowledge And Skills In A More Technical Environment.</p>
+                        </div>
+
+                        <div
+                            class="relative p-5 border border-gray-300 bg-white cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-transparent mb-5">
+                            <span
+                                class="absolute w-5 h-5 rounded-full bg-[#00abf0] border-2 border-white right-full mr-[25px] top-0"></span>
+                            <h4 class="relative text-[#00abf0] mb-2">2021 - 2024</h4>
+                            <h3 class="font-sans text-lg text-[#444] mb-2">Advancing At PT Karir Anak Indonesia</h3>
+                            <p class="text-gray-600 leading-5">At PT Karir Anak Indonesia, I Adapted To A Dynamic
+                                Workplace, Strengthening My Professional Growth Through Various Opportunities.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience Section Starts -->
+                <section class="col">
+                    <header class="font-sans text-[#00abf0] pl-8 pb-5">
+                        <h2 class="text-xl md:text-2xl">EXPERIENCE</h2>
+                    </header>
+
+                    <div class="pl-8 border-l-2 border-gray-400">
+                        <div
+                            class="relative p-5 border border-gray-300 bg-white cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-transparent mb-5">
+                            <span
+                                class="absolute w-5 h-5 rounded-full bg-[#00abf0] border-2 border-white right-full mr-[25px] top-0"></span>
+                            <h4 class="relative text-[#00abf0] mb-2">2015 - 2018</h4>
+                            <h3 class="font-sans text-lg text-[#444] mb-2">UI/UX Designer</h3>
+                            <p class="text-gray-600 leading-5">I Began My Career As A UI/UX Designer, Focusing On
+                                Creating User-Friendly And Visually Appealing Interfaces.</p>
+                        </div>
+
+                        <div
+                            class="relative p-5 border border-gray-300 bg-white cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-transparent mb-5">
+                            <span
+                                class="absolute w-5 h-5 rounded-full bg-[#00abf0] border-2 border-white right-full mr-[25px] top-0"></span>
+                            <h4 class="relative text-[#00abf0] mb-2">2018 - 2021</h4>
+                            <h3 class="font-sans text-lg text-[#444] mb-2">Front-End Developer</h3>
+                            <p class="text-gray-600 leading-5">I Transitioned Into Front-End Development, Implementing
+                                Designs With HTML, CSS, And JavaScript While Ensuring Responsiveness.</p>
+                        </div>
+
+                        <div
+                            class="relative p-5 border border-gray-300 bg-white cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-transparent mb-5">
+                            <span
+                                class="absolute w-5 h-5 rounded-full bg-[#00abf0] border-2 border-white right-full mr-[25px] top-0"></span>
+                            <h4 class="relative text-[#00abf0] mb-2">2021 - 2024</h4>
+                            <h3 class="font-sans text-lg text-[#444] mb-2">Full-Stack Developer</h3>
+                            <p class="text-gray-600 leading-5">My Journey Continued As A Full Stack Developer, Mastering
+                                Both Frontend And Backend Development To Build Complete Web Applications.</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Testimonial -->
+    <section class="section__container mt-0 pt-20 w-full h-[50rem]">
+        <h2 class="text-lg font-semibold text-blue-400 text-center">Testimonials</h2>
+        <h1 class="relative mb-8 text-3xl font-semibold text-white text-center">
+            What our customers say
+            <span class="absolute left-1/2 bottom-0 transform -translate-x-1/2 h-1 w-20 bg-blue-400"></span>
+        </h1>
+
+        <!-- Swiper Container with unique class -->
+        <div class="swiper uniqueSwiper boyah">
+            <div class="swiper-wrapper">
+                <!-- Testimonial Card 1 -->
+                <div
+                    class="swiper-slide paradox flex flex-col items-center relative overflow-hidden p-10 bg-white rounded-lg shadow-lg transition duration-300 ease-in-out section__card relative isolate overflow-hidden p-20 pt-8 pb-8 bg-white rounded-md shadow-[5px_5px_10px_rgba(0,0,0,0.1)] transition duration-300 hover:text-white">
+                    <span class="absolute top-0 left-0 p-4 text-5xl text-white opacity-100">
+                        <i class='bx bxs-quote-alt-left'></i>
+                    </span>
+                    <h4 class="mt-16 mb-4 text-3xl font-semibold text-blue-400 text-center text-current">Love the
+                        simplicity</h4>
+                    <p class="mb-8 text-center text-current">They understood our brand and created a stunning website
+                        design. Professional, responsive, and on-time delivery.</p>
+                    <img class="mb-4 rounded-full border-2 transition duration-300 text-current" src="../asset/pfp1.png"
+                        alt="pfp1" />
+                    <h5 class="text-xl font-semibold text-current">Allan Collins</h5>
+                    <h6 class="text-base font-normal text-current">Managing Director</h6>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div
+                    class="swiper-slide paradox flex flex-col items-center relative overflow-hidden p-10 bg-white rounded-lg shadow-lg transition duration-300 ease-in-out section__card relative isolate overflow-hidden p-20 pt-8 pb-8 bg-white rounded-md shadow-[5px_5px_10px_rgba(0,0,0,0.1)] transition duration-300 hover:text-white">
+                    <span class="absolute top-0 left-0 p-4 text-5xl text-white opacity-100">
+                        <i class='bx bxs-quote-alt-left'></i>
+                    </span>
+                    <h4 class="mt-16 mb-4 text-3xl font-semibold text-center text-current">Excellent Designs</h4>
+                    <p class="mb-8 text-center text-current">Efficient, reliable, and results-oriented. Visually
+                        appealing website, improved online visibility. Highly recommended!</p>
+                    <img class="mb-4 rounded-full border-2 transition duration-300 text-current" src="../asset/pfp2.png"
+                        alt="pfp2" />
+                    <h5 class="text-xl font-semibold text-current">Tanya Grant</h5>
+                    <h6 class="text-base font-normal text-current">CEO & Founder</h6>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div
+                    class="swiper-slide paradox flex flex-col items-center relative overflow-hidden p-10 bg-white rounded-lg shadow-lg transition duration-300 ease-in-out section__card relative isolate overflow-hidden p-20 pt-8 pb-8 bg-white rounded-md shadow-[5px_5px_10px_rgba(0,0,0,0.1)] transition duration-300 hover:text-white">
+                    <span class="absolute top-0 left-0 p-4 text-5xl text-white opacity-100">
+                        <i class='bx bxs-quote-alt-left'></i>
+                    </span>
+                    <h4 class="mt-16 mb-4 text-3xl font-semibold text-center text-current">Efficient and Reliable</h4>
+                    <p class="mb-8 text-center text-current">Best decision we made. Stunning website, exceptional
+                        support. Always available and prompt issue resolution!</p>
+                    <img class="mb-4 rounded-full border-2 transition duration-300 text-current" src="../asset/pfp3.png"
+                        alt="pfp3" />
+                    <h5 class="text-xl font-semibold text-current">Clay Washington</h5>
+                    <h6 class="text-base font-normal text-current">Fashion Designer</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="newsletter w-full h-[30rem] flex items-center justify-center gap-20" id="Contact"
+        style="margin-bottom: 5rem;">
+        <div class="news-text text-white text-left" style="margin-right: 15rem;">
+            <h1 class="relative mb-8 text-5xl font-semibold text-white">
+                Contact Me
+            </h1>
+            <h2 class="text-2xl font-semibold text-blue-400">
+                Contact Me For Recruitment, <br> Partnerships, Or Collaboration.
+            </h2>
+        </div>
+
+        <section class="star_container"
+            style="border: 2px solid rgb(31, 144, 224); margin-top: 15rem; padding: 20px;  background-color: #fff;">
+            <h2 class="text-2xl font-bold mb-2">Send Message</h2>
+            <div class="py-1 lg:py-7 px-3 mx-auto max-w-screen-lg" style="width: 30rem; height: auto;">
+                <form action="#" class="space-y-7">
+                    <div class="mb-3">
+                        <label for="email" class="block mb-1 text-base font-semibold text-gray-900 dark:text-gray-300"
+                            style="color: black;">
+                            Email</label>
+                        <input type="email" id="email"
+                            style="padding: 10px; background-color: #fff; border: 1px solid grey; color: black;"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                            placeholder="andika@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="block mb-1 text-base font-semibold text-gray-900 dark:text-gray-300"
+                            style="color: black;">
+                            Name</label>
+                        <input type="text" id="subject"
+                            style="padding: 10px; border: 1px solid grey; color: black; background-color: #fff;"
+                            class="block p-3 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                            placeholder="Input Your Name / Company Name" required>
+                    </div>
+                    <div class="sm:col-span-2 mb-3">
+                        <label for="message" class="block mb-1 text-base font-semibold text-gray-900 dark:text-gray-400"
+                            style="color: black;">
+                            Message</label>
+                        <textarea id="message" rows="6"
+                            style="padding: 10px; background-color: #fff; border: 1px solid grey; color: black;"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Message From...."></textarea>
+                    </div>
+                    <button type="submit"
+                        style="margin-top: 1rem; justify-content: center; width: 100%; border: 1px solid grey;"
+                        class="py-2 px-5 text-lg font-bold text-center sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 
+                           hover:bg-black hover:text-white cursor-pointer border-2 border-black transition-all duration-300" onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
+                        onmouseout="this.style.backgroundColor=''; this.style.color='';">
+                        Send
+                    </button>
+
+                </form>
+            </div>
+        </section>
+    </section>
+
+    <div class="footer text-white pt-5" style="margin-top: 7rem;">
+        <div class="top flex flex-wrap py-[50px] lg:justify-start justify-center gap-10"
+            style="left: 5%; position: relative;">
+
+            <div class="parent-contact flex items-start" style="width: 252px; height: 88px;">
+                <a href="https://www.tiktok.com/@andika.sinatrya" target="_blank" class="flex w-full h-full">
+                    <span class="sacrifice-parent-contact text-5xl md:mr-4">
+                        <i class='bx bxl-tiktok'></i>
+                    </span>
+                    <div class="footer_low">
+                        <h1 class="text-2xl">Tiktok</h1>
+                        <p class="text-sm w-40 md:w-[189px]">
+                            I Often Use TikTok For Many Things. Feel Free To Friend Me On
+                            TikTok.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="parent-contact flex items-start" style="width: 252px; height: 88px;">
+                <a href="https://discord.com/users/your_user_id" target="_blank" class="flex w-full h-full">
+                    <span class="sacrifice-parent-contact text-5xl md:mr-4">
+                        <i class='bx bxl-discord-alt'></i>
+                    </span>
+                    <div class="footer_low">
+                        <h1 class="text-2xl">Discord</h1>
+                        <p class="text-sm w-40 md:w-[189px]">
+                            I Use This Daily For Multi Purposes, Add Me If You Need
+                            Real-Time Conversation.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="parent-contact flex items-start" style="width: 252px; height: 88px;">
+                <a href="https://t.me/username_telegram" target="_blank" class="flex w-full h-full">
+                    <span class="sacrifice-parent-contact text-5xl md:mr-4">
+                        <i class='bx bxl-telegram'></i>
+                    </span>
+                    <div class="footer_low">
+                        <h1 class="text-2xl">Telegram</h1>
+                        <p class="text-sm w-40 md:w-[189px]">
+                            I Rarely Use Telegram, But Feel Free To Send Me Text On This
+                            Platform Anytime.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+
+
+            <div class="parent-contact flex items-start" style="width: 252px; height: 88px;">
+                <a href="https://wa.me/082226221689" target="_blank" class="flex w-full h-full">
+                    <span class="sacrifice-parent-contact text-5xl md:mr-4">
+                        <i class='bx bxl-whatsapp'></i>
+                    </span>
+                    <div class="footer_low">
+                        <h1 class="text-2xl">WhatsApp</h1>
+                        <p class="text-sm w-40 md:w-[189px]">
+                            I Am Most Often Active On WhatsApp. You Can Give Me A Message.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+
+        <div class="line w-full h-[1px] left-0 opacity-20 bg-[#969696]"></div>
+        <!-- Footer -->
+        <div
+            class="bottom flex flex-col md:flex-row justify-center gap-5 flex-wrap px-[5%] py-[26px] text-center md:text-left">
+            <div class="left">
+                Copyright © 2024 by Andika Sinatrya Diningnada
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="../public/js/particles.js"></script>
+    <script src="../public/js/app.js"></script>
+    <script src="../public/js/fslightbox.js"></script>
+
+
+</body>
+
+</html>
